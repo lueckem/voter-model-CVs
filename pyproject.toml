@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "interpretable_cvs"
+version = "0.1.0"
+description = ""
+authors = ["Marvin Lücke"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+packages = [{include = "interpretable_cvs"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+cnvm = "^0.1.0"
+cvxpy = "^1.3.1"
+scikit-learn = "^1.2.2"
+matplotlib = "^3.7.1"
+
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.0"
+pytest-cov = "^4.0.0"
+black = "^23.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
