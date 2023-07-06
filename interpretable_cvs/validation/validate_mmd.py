@@ -53,7 +53,7 @@ def mmd_from_trajs(c):
     return mmd
 
 
-def plot_validation_mmd(t, mmd, ax, label):
+def plot_validation_mmd(t, mmd, ax, label, t_star: float = None):
     for i in range(mmd.shape[1]):
         for j in range(i):
             ax.semilogy(t, mmd[:, j, i], label=fr"{label}$(x^{j + 1},x^{i + 1})$")
@@ -62,7 +62,12 @@ def plot_validation_mmd(t, mmd, ax, label):
         low_lim = 1e-8
     else:
         low_lim = 0.9 * np.min(mmd_no_zeros)
+
+    if t_star is not None:
+        ax.set_xticks(list(ax.get_xticks(minor=True)) + [t_star], labels=list(ax.get_xticklabels(minor=True)) + [' $t^*$'], minor=True)
+        ax.axvline(t_star, color='k', linestyle='--', linewidth=1)
+
     ax.set_ylim((low_lim, 1.1 * np.max(mmd)))
-    ax.grid()
+    ax.grid(which="major")
     ax.legend(loc="upper right")
     ax.set_xlabel("t")
