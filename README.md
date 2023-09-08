@@ -1,6 +1,6 @@
 # Interpretable Collective Variables of the noisy Voter Model
 
-This repository contains the code and numerical examples presented in the preprint [arXiv:ToBeInserted](https://github.com/lueckem/voter-model-CVs).
+This repository contains the code and numerical examples presented in the preprint "[Learning Interpretable Collective Variables of the Noisy Voter Model](https://arxiv.org/abs/2307.03491)".
 
 To run the examples, first download the repository and install the needed Python packages via the command
 ```
